@@ -28,4 +28,16 @@ class ItemController extends Controller
 
         return Item::find($request->id);
     }
+
+    public function destroy(Request $request)
+    {
+        Item::where('id', $request->id)->delete();
+
+        return 'Item is deleted!';
+    }
+
+    public function all()
+    {
+        return Item::all();
+    }
 }
